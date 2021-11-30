@@ -9,7 +9,7 @@ export default function Card(props) {
                     <h5 class="card-title">{props.data.title}</h5>
                     <p class="card-text">{props.data.description}</p>
                     <p class="card-text">{props.data.price}</p>
-                    <a href="#" class="btn btn-outline-success" onClick={() => {props.handleCart(props.data.id)}} >Add to cart</a>
+                    <a href="/#" class="btn btn-outline-success" onClick={() => {props.handleCart(props.data.id)}} >Add to cart</a>
                 </div>
             </div>
         </div>

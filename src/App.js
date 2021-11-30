@@ -5,7 +5,7 @@ import CartItem from './cartItem';
 import { useState } from 'react';
 function App() {
 
-  const [products, setProduct] = useState([
+  const [products] = useState([
     {
       id: 1,
       title: "Product 1",
@@ -48,7 +48,7 @@ function App() {
   const [total, setTotal] = useState(0);
 
   let addToCart = (id) => {
-    let prod = products.find(obj => obj.id == id)
+    let prod = products.find(obj => obj.id === id)
     setCartItem([...cartItems, prod]);
     setTotal(total + prod.price);
   }
@@ -56,7 +56,7 @@ function App() {
   let removeItem = (id) => {
     let result = window.confirm("Are you sure?");
     if(result) {
-      let cartIndex = cartItems.findIndex(obj => obj.id == id);
+      let cartIndex = cartItems.findIndex(obj => obj.id === id);
       setTotal(total - cartItems[cartIndex].price)
       cartItems.splice(cartIndex, 1);
       setCartItem([...cartItems])
@@ -83,7 +83,7 @@ function App() {
             <ol class="list-group list-group-numbered">
               
               {
-                cartItems.length == 0 ? <h3>No items in cart</h3> : null
+                cartItems.length === 0 ? <h3>No items in cart</h3> : null
               }
               {
                 cartItems.map((addedToCart) => {
